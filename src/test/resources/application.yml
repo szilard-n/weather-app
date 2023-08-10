@@ -1,0 +1,3 @@
+api:
+  clients:
+    go-weather: http://localhost:9999

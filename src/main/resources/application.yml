@@ -1,0 +1,3 @@
+api:
+  clients:
+    go-weather: https://goweather.herokuapp.com
