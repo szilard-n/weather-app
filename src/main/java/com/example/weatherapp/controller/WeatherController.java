@@ -3,6 +3,7 @@ package com.example.weatherapp.controller;
 import com.example.weatherapp.dto.WeatherResponse;
 import com.example.weatherapp.service.WeatherService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +17,7 @@ public class WeatherController {
 
     private final WeatherService weatherService;
 
-    @GetMapping
+    @GetMapping(produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Mono<WeatherResponse> getAverageWeatherValues(@RequestParam("city") String city) {
         return weatherService.getAverageWeatherValues(city.split(","));
     }
